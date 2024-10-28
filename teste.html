@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Estoque - RRJ A&D</title>
+    <link rel="stylesheet" href="./teste.css">
+</head>
+<body>
+    <header>
+        <div class="logo">RRJ A&D</div>
+        <nav>
+            <a href="#">Finanças</a>
+            <a href="#">Gestão de Estoque</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Busca">
+                <button>🔍</button>
+            </div>
+            <button class="user-icon">👤</button>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li>Cervejas</li>
+                <li>Vinhos</li>
+                <li>Whiskys</li>
+                <li>Gins</li>
+            </ul>
+        </aside>
+        
+        <!-- Main Content -->
+        <main>
+            <div class="products">
+                <div class="product-card" data-name="Spaten 269ml" data-price="3" data-category="Cerveja">
+                    <img src="spaten.png" alt="Spaten 269ml">
+                    <h3>Spaten 269ml</h3>
+                    <p>R$ 3,00</p>
+                    <p>Cerveja</p>
+                    <button onclick="addToCart('Spaten 269ml', 3)">Adc und</button>
+                    <button onclick="addToCart('Spaten 269ml', 36)">Adc cx</button>
+                </div>
+                <div class="product-card" data-name="Jack Daniels" data-price="150" data-category="Whisky">
+                    <img src="jackdaniels.png" alt="Jack Daniels">
+                    <h3>Jack Daniels</h3>
+                    <p>R$ 150,00</p>
+                    <p>Whisky</p>
+                    <button onclick="addToCart('Jack Daniels', 150)">Adc und</button>
+                    <button onclick="addToCart('Jack Daniels', 900)">Adc cx</button>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Cart Sidebar -->
+        <aside class="cart">
+            <h2>Carrinho</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="total-price">R$ 0,00</span>
+            </div>
+            <button class="finalize-btn">Finalizar</button>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
