@@ -8,6 +8,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recibo/', views.Recibo.as_view(), name='recibo'),
-    path('', include('caixa.urls')),
+    # path('carrinho/', include('carrinho.urls')),
+    path('estoque/', include('gestao_estoque.urls')),
+    path('caixa/', include('caixa.urls')),
+
 
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

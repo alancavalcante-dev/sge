@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+</head>
+<style>
+    .icons-crud {
+        width: 25px;
+    }
+
+
+</style>
+<body>
+    
+
+
+
+    <form action="{% url 'produtos' %}" method="GET">
+        <input type="search" name="search" placeholder="Pesquisar" class="form-control">
+        <input type="submit" value="Consultar">
+    </form>
+    
+    <p>
+        <a href="{% url 'produto-create' %}">Adicionar produto</a>
+    </p>
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Quantidade</th>
+
+            </tr>
+            </thead>
+            <tbody>
+                {% for produto in object_list %}
+                    <tr>
+                        <th>{{ produto.id }}</th>
+                        <th>{{ produto.type.type }}</th>
+                        <td>{{ produto.brand.brand }}</td>
+                        <td>{{ produto.name }}</td>
+                        <td>{{ produto.quantity }}</td>
+                        <td>{{ produto.price }}</td>
+                        <td><a href="{% url 'caixa' %}?search={{ produto.id }}"><img class="icons-crud" src="{% static 'app/images/icons-crud/icon-visualizar.png' %}" alt="Ícone de visualizar"></a></td>
+                        <td><a href="{% url 'produto-update' pk=produto.id %}"><img class="icons-crud" src="{% static 'app/images/icons-crud/icon-editar.png' %}" alt="Ícone de editar"></a></td>
+                        <td><a href="{% url 'produto-remove' pk=produto.id %}"><img class="icons-crud" src="{% static 'app/images/icons-crud/icon-excluir.png' %}" alt="Ícone de excluir"></a></td>
+                    </tr>
+                {% empty %}
+                    <li>Nenhum produto encontrado.</li>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if is_paginated %}
+                    <a href="?page=1" class="first-page">&laquo; Primeira</a>
+                    <span class="middle-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}" class="previous-page">Anterior</a>
+                        {% endif %}
+                        <span>Página <b>{{ page_obj.number }}</b> de {{ page_obj.paginator.num_pages }}</span>
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="next-page">Próxima</a>
+                        {% endif %}
+                    </span>
+                    <a href="?page={{ page_obj.paginator.num_pages }}" class="last-page">Última &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+</body>
+</html>

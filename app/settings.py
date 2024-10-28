@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'caixa',
     'gestao_estoque',
     'recibo',
+    'carrinho',
 ]
 
 MIDDLEWARE = [

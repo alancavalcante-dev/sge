@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <form action="{% url 'home' %}" method="GET">
+    <form action="{% url 'caixa' %}" method="GET">
         <input type="search" name="search">
         <input type="submit">
     </form>
@@ -20,6 +20,9 @@
         {% if prod.image  %}
             <img width="100" height="100" src="{{ prod.image.url }}" alt="{{ prod.name }}">
         {% endif %}
+
+    {% empty %}
+        <li>Nenhum produto encontrado.</li>
     {% endfor %}
 
 

@@ -9,8 +9,10 @@ class CaixaView(View):
     def get(self, request):
         produtos = Produto.objects.all()
         search = request.GET.get('search')
+        
         if search:
             produtos = produtos.filter(
+                Q(id__contains=search) |
                 Q(name__icontains=search) |
                 Q(brand__brand__icontains=search) |
                 Q(type__type__icontains=search)
@@ -18,7 +20,7 @@ class CaixaView(View):
 
         return render(
             request,
-            'caixa/home.html', {
+            'caixa/caixa.html', {
                 'produtos': produtos
             }
         )
