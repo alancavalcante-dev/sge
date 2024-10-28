@@ -9,20 +9,21 @@
 </head>
 <body>
     <header>
-        <section class="marca">
+        <section class="logo">
             <img src="./img/adega-climatizada.png" alt="Logo do site">
             <p>RRJ A&D</p>
         </section>
         <nav class="menu">
-            <ul>
-                <li>Finanças</li>
-                <li>Gestão de Estoque</li>
-            </ul>
-            <img src="./img/busca.svg" alt="Imagem de Lupa">
-            <input type="text" placeholder="Buscar">
-            <img src="./img/usuario.svg" alt="Imagem de usuário">
+            <p>Finanças</p>
+            <p>Gestão de Estoque</p>
+            <div class="barraDeBusca">
+                <img src="./img/busca.svg" alt="Imagem de Lupa">
+                <input type="text" placeholder="Buscar">    
+            </div>
+            <img class="imagemUsuario" src="./img/usuario.svg" alt="Imagem de usuário">
         </nav>
     </header>
+    
     <main>
         <nav class="leftMenu">
             <section>
@@ -30,17 +31,22 @@
                 <p>Cerveja</p>
             </section>
         </nav>
-        <div class="card">
-            <img src="./img/spaten.png" alt="Imagem do produto">
-            <div class="descricao">
-                <p>Spaten 269ml</p>
-                <img src="./img/coin.svg">
-                <p>R$ 3,00</p>
-                <button>Adc und</button>
-                <button>Adc cx</button>
+
+        <div class="vitrine">
+            <div class="card">
+                <img src="./img/spaten.png" alt="Imagem do produto">
+                <div class="descricao">
+                    <p>Spaten 269ml</p>
+                    <section class="preco">
+                        <img src="./img/coin.svg">
+                        <p>R$ 3,00</p>
+                    </section>
+                    
+                    <button class="botaoUnd">Adc und</button>
+                    <button class="botaoCx">Adc cx</button>
+                </div>
             </div>
         </div>
-
         <div class="carrinho">
             <div class="cardCarrinho">
                 <img src="./img/spaten.png">
