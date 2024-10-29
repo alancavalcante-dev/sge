@@ -1,0 +1,38 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} Estoque -Tipos de Produtos {% endblock %}
+
+{% block main %}
+    <form action="{% url 'marcas' %}" method="GET">
+        <input type="search" name="search" placeholder="Pesquisar">
+        <input type="submit" value="Consultar">
+    </form>
+    
+    <p>
+        <a href="{% url 'marcas-create' %}">Adicionar Marca de Produto</a>
+    </p>
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Marcas</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for marcas in object_list %}
+                    <tr>
+                        <th>{{ marcas.id }}</th>
+                        <th>{{ marcas.brand }}</th>
+                        <td><a href="{% url 'caixa' %}?search={{ marcas.brand}}"><img class="icons-crud" src="{% static 'app/images/icons-crud/icon-visualizar.png' %}" alt="Ícone de visualizar"></a></td>
+                        <td><a href="{% url 'marcas-update' pk=marcas.id %}"><img class="icons-crud" src="{% static 'app/images/icons-crud/icon-editar.png' %}" alt="Ícone de editar"></a></td>
+                        <td><a href="{% url 'marcas-remove' pk=marcas.id %}"><img class="icons-crud" src="{% static 'app/images/icons-crud/icon-excluir.png' %}" alt="Ícone de excluir"></a></td>
+                    </tr>
+                {% empty %}
+                    <li>Nenhuma marca encontrado.</li>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
