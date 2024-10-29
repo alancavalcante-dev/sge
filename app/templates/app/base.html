@@ -10,17 +10,18 @@
 <body>
 
     <header>
-        <a href="{% url 'estoque' %}">Página principal</a>
-        <a href="{% url 'caixa' %}">Caixa</a>
-        <a href="{% url 'produtos' %}">Produtos</a>
-        <a href="{% url 'tipos' %}">Tipos de produtos</a>
+        <a href="{% url 'estoque' %}">Página principal</a><br>
+        <a href="{% url 'caixa' %}">Caixa</a><br>
+        <a href="{% url 'produtos' %}">Produtos</a><br>
+        <a href="{% url 'tipos' %}">Tipos de produtos</a><br>
         <a href="{% url 'marcas' %}">Marcas de produtos</a>
+        
     </header>
 
     <main>
         {% block main %}{% endblock %}
     </main>
 
-
+    
 </body>
 </html>

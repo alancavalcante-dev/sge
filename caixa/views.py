@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from django.views.generic import View
 from django.db.models import Q
-from gestao_estoque.models import Produto
+from gestao_estoque.models import Produto, TipoProduto
 
 
 class CaixaView(View):
 
     def get(self, request):
         produtos = Produto.objects.all().filter(active=True)
+        tipos_produtos = TipoProduto.objects.all()
+
         search = request.GET.get('search')
         
         if search:
@@ -21,6 +23,7 @@ class CaixaView(View):
         return render(
             request,
             'caixa/caixa.html', {
-                'produtos': produtos
+                'produtos': produtos,
+                'tipos_produtos': tipos_produtos
             }
         )

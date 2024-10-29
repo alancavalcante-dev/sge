@@ -1,30 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos</title>
-</head>
-<body>
+{% extends "caixa/base.html" %}
+{% load static %}
 
-    <form action="{% url 'caixa' %}" method="GET">
-        <input type="search" name="search">
-        <input type="submit">
-    </form>
+{% block vitrine %}
+        
+        <div class="vitrine">
+            {% for prod in produtos %}
+            <div class="card">
+                {% if prod.image  %}
+                    <img src="{{ prod.image.url }}" alt="{{ prod.name }}">
+                {% endif %}
+                <div class="descricao">
+                    <p>{{ prod.name }}</p>
+                    <p>{{ prod.brand }}</p>
+                    <p>{{ prod.type }}</p>
+                    <section class="preco">
+                        <img src="{% static 'caixa/images/coin.svg' %}">
+                        <p>R$ {{ prod.price }}</p>
+                    </section>
+                    
+                    <button class="botaoUnd">Adc und</button>
+                    <button class="botaoCx">Adc cx</button>
+                </div>
+            </div>
+            {% empty %}
+                <li>Nenhum produto encontrado.</li>
+            {% endfor %}
+        </div>
+    
 
-    {% for prod in produtos %}
-        <p>{{ prod.brand }}</p>
-        <p>{{ prod.name }}</p>
-        <p>{{ prod.quantity }}</p>
-        <p>{{ prod.price }}</p>
-        {% if prod.image  %}
-            <img width="100" height="100" src="{{ prod.image.url }}" alt="{{ prod.name }}">
-        {% endif %}
 
-    {% empty %}
-        <li>Nenhum produto encontrado.</li>
-    {% endfor %}
-
-
-</body>
-</html>
+{% endblock %}

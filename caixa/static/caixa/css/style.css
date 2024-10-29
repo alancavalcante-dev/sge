@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #F1C86B;
+    color: white;
+    padding: 0.5em 2em;
+
+    .logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-weight: bold;
+        font-size: 32px;
+        border-right: solid;
+        margin-right: 1em;
+    
+        >img{
+            height: 2.8em
+        }
+    
+        >p{
+            font-weight: bold;
+        }
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1.2rem;
+        width: 80%;
+        justify-content: space-around;
+    }
+    
+    .barraDeBusca{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 20%;
+    
+        >input{
+            border-radius: 0.5em;
+            border: none;
+            padding: 0.5em;
+        }
+    }
+    
+    .imagemUsuario{
+        background-color: black;
+        border-radius: 1em;
+        padding: 0.5em;
+    }
+
+}
+
+
+
+.leftMenu{
+    background-color: #F1C86B;
+    width: 17%;
+    height: 100vh;
+
+    >section{
+        display: flex;
+        align-items: center;
+        padding: 0.5em 2.5em;
+
+        >img{
+            height: 3em;
+        }
+
+        >p{
+            font-weight: 500;
+            font-size: 1.2rem;
+
+            >a {
+                text-decoration: none;
+                color: black;
+            }
+
+            >a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+
+
+
+.vitrine{
+    width: 80%;
+    height: 100vh;
+    padding: 0.5em 3.5em;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2em;
+
+    .card{
+        height: 20em;
+        width: 13em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1em;
+        font-weight: 300;
+
+        >img{
+            height: 9em;
+        }
+
+        .descricao{
+            height: 50%;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 1em;
+            border-radius: 1em;
+
+            .preco{
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                
+                >img{
+                    background-color: #F1C86B;
+                    border-radius: 0.4em;
+                }
+            }
+
+            .botaoUnd{
+                padding: 0.5em 1.5em;
+                background-color: #F1C86B;
+            }
+            
+            .botaoCx{
+                background-color: #F1C86B;
+                padding: 0.5em 1.8em;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="{% static 'caixa/css/style.css' %}">
+</head>
+<body>
+
+
+    <header>
+        <section class="logo">
+            <img src="{% static 'caixa/images/adega-climatizada.png' %}" alt="Logo do site">
+            <p>RRJ A&D</p>
+        </section>
+        <nav class="menu">
+            <p><a href="#">Finanças</a></p>
+            <p><a href="{% url 'estoque' %}">Gestão de Estoque</a></p>
+            <form action="{% url 'caixa' %}" method="GET" class="barraDeBusca">
+                <img src="{% static 'caixa/images/busca.svg' %}" alt="Imagem de Lupa">
+                <input type="search" name="search" placeholder="Buscar">    
+            </form>
+            <img class="imagemUsuario" src="{% static 'caixa/images/usuario.svg' %}" alt="Imagem de usuário">
+        </nav>
+    </header>
+
+    
+
+<main>
+    <nav class="leftMenu">
+        {% for i in tipos_produtos %}
+            <section>
+                <img src="{% static 'caixa/images/cerveja.png' %}" alt="">
+                <p><a href="{% url 'caixa' %}?search={{i}}">{{i}}</a></p>
+            </section>
+        {% endfor %}
+            <!-- <img src="./img/cerveja.png"> -->
+    </nav>
+    {% block vitrine %}{% endblock %}
+</main>
+
+
+
+</body>
+</html>
