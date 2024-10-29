@@ -1,11 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base</title>
+    <title>{% block title %}Base{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
 </head>
 <body>
+
+    <header>
+        <a href="{% url 'estoque' %}">Página principal</a>
+        <a href="{% url 'caixa' %}">Caixa</a>
+        <a href="{% url 'produtos' %}">Produtos</a>
+        <a href="{% url 'tipos' %}">Tipos de produtos</a>
+        <a href="{% url 'marcas' %}">Marcas de produtos</a>
+    </header>
+
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+
 
 </body>
 </html>

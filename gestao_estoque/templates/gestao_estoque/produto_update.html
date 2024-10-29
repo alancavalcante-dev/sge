@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto - Atualizar</title>
-</head>
-<body>
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} Estoque - Atualizar Produto {% endblock %}
+
+{% block main%}
     
     <form method="POST">
         {% csrf_token %}
@@ -13,5 +11,4 @@
         <input type="submit">
     </form>
 
-</body>
-</html>
+{% endblock %}
