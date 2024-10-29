@@ -13,52 +13,57 @@ header{
     background-color: #F1C86B;
     color: white;
     padding: 0.5em 2em;
-}
-.logo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-weight: bold;
-    font-size: 32px;
-    border-right: solid;
-    margin-right: 1em;
 
-    >img{
-        height: 2.8em
-    }
-
-    >p{
+    .logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         font-weight: bold;
+        font-size: 32px;
+        border-right: solid;
+        margin-right: 1em;
+    
+        >img{
+            height: 2.8em
+        }
+    
+        >p{
+            font-weight: bold;
+        }
     }
-}
 
-.menu{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 1.5rem;
-    width: 80%;
-    justify-content: space-around;
-}
-
-.barraDeBusca{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 20%;
-
-    >input{
-        border-radius: 0.5em;
-        border: none;
+    .menu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1.5rem;
+        width: 80%;
+        justify-content: space-around;
+    }
+    
+    .barraDeBusca{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 20%;
+    
+        >input{
+            border-radius: 0.5em;
+            border: none;
+            padding: 0.5em;
+        }
+    }
+    
+    .imagemUsuario{
+        background-color: black;
+        border-radius: 1em;
         padding: 0.5em;
     }
+
 }
 
-.imagemUsuario{
-    background-color: black;
-    border-radius: 1em;
-    padding: 0.5em;
-}
+
+
 
 main{
     display: flex;
