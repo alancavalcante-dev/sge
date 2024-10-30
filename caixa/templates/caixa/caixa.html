@@ -12,21 +12,19 @@
                 <div class="descricao">
                     <p>{{ prod.name }}</p>
                     <p>{{ prod.brand }}</p>
-                    <p>{{ prod.type }}</p>
                     <section class="preco">
                         <img src="{% static 'caixa/images/coin.svg' %}">
                         <p>R$ {{ prod.price }}</p>
                     </section>
-                    
-                    <button class="botaoUnd">Adc und</button>
-                    <button class="botaoCx">Adc cx</button>
+                    <button class="botaoCx" onclick="adicionarAoCarrinho('{{prod.id}}')">Add Produto</button>
+                    {% comment %} <button class="botaoUnd">Adc und</button>
+                    <button class="botaoCx">Adc cx</button> {% endcomment %}
                 </div>
             </div>
             {% empty %}
                 <li>Nenhum produto encontrado.</li>
             {% endfor %}
         </div>
-    
 
 
 {% endblock %}

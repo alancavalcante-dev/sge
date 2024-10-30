@@ -3,6 +3,7 @@ from django.db import models
 
 class TipoProduto(models.Model):
     type = models.CharField(max_length=50, unique=True)
+    image = models.ImageField(upload_to='tipos/', null=True, blank=True)
 
     def __str__(self):
         return self.type

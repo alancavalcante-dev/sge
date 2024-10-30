@@ -153,13 +153,17 @@ header{
             .botaoUnd{
                 padding: 0.5em 1.5em;
                 background-color: #F1C86B;
+                cursor: pointer;
             }
             
             .botaoCx{
                 background-color: #F1C86B;
                 padding: 0.5em 1.8em;
+                cursor: pointer;
+
             }
         }
         
     }
 }
+

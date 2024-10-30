@@ -32,7 +32,9 @@
     <nav class="leftMenu">
         {% for i in tipos_produtos %}
             <section>
-                <img src="{% static 'caixa/images/cerveja.png' %}" alt="">
+                {% if i.image %}
+                    <img src="{{i.image.url}}" alt="">
+                {% endif %}
                 <p><a href="{% url 'caixa' %}?search={{i}}">{{i}}</a></p>
             </section>
         {% endfor %}
